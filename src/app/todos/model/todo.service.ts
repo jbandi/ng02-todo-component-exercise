@@ -11,7 +11,7 @@ interface TodoContainer {
 const pendingToDosFilter = todos => todos.filter(todo => todo.completed === false);
 const doneToDosFilter = todos => todos.filter(todo => todo.completed === true);
 
-@Injectable()
+@Injectable({providedIn: 'root'})
 export class ToDoService {
 
   loadToDos(): TodoContainer {
@@ -19,10 +19,10 @@ export class ToDoService {
 
     const allTodos = loadedToDos
       .map((json: {_title: string, completed: boolean}) => {
-      const todo = new ToDo(json._title);
-      todo.completed = json.completed;
-      return todo;
-    });
+        const todo = new ToDo(json._title);
+        todo.completed = json.completed;
+        return todo;
+      });
 
     const todos = allTodos.filter(t => t.completed === false);
     const done = allTodos.filter(t => t.completed === true);

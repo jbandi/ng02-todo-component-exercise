@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'td-done-todos',
-  templateUrl: './done-todos.component.html'
+  templateUrl: './done-screen.component.html'
 })
-export class DoneTodosComponent implements OnInit {
+export class DoneScreenComponent implements OnInit {
 
   constructor() { }
 

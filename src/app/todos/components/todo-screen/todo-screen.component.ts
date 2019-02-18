@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import {ToDo} from '../model/todo.model';
-import {ToDoService} from '../model/todo.service';
+import {ToDo} from '../../model/todo.model';
+import {ToDoService} from '../../model/todo.service';
 
 @Component({
-  templateUrl: './overview.component.html',
+  templateUrl: './todo-screen.component.html',
 })
-export class OverviewComponent implements OnInit {
+export class TodoScreenComponent implements OnInit {
 
   newToDoTitle = '';
   todos: ToDo[] = [];

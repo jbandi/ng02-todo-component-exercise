@@ -4,18 +4,17 @@ import {FormsModule} from '@angular/forms';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {OverviewComponent} from './todos/components/overview.component';
-import {ToDoService} from './todos/model/todo.service';
+import {TodoScreenComponent} from './todos/components/todo-screen/todo-screen.component';
 import {NewTodoComponent} from './todos/components/new-todo/new-todo.component';
-import {DoneTodosComponent} from './todos/components/done-todos.component';
+import {DoneScreenComponent} from './todos/components/done-screen/done-screen.component';
 import {HashLocationStrategy, LocationStrategy} from '@angular/common';
 
 @NgModule({
   declarations: [
     AppComponent,
-    OverviewComponent,
+    TodoScreenComponent,
     NewTodoComponent,
-    DoneTodosComponent,
+    DoneScreenComponent,
   ],
   imports: [
     BrowserModule,
@@ -23,8 +22,7 @@ import {HashLocationStrategy, LocationStrategy} from '@angular/common';
     AppRoutingModule
   ],
   providers: [
-    {provide: LocationStrategy, useClass: HashLocationStrategy},
-    ToDoService,
+    {provide: LocationStrategy, useClass: HashLocationStrategy}
   ],
   bootstrap: [AppComponent]
 })
